@@ -20,7 +20,7 @@ Cursor.prototype.draw = function(length) {
 	this.history.push(this.position);
 }
 
-// Koch curve al
+// koch curve algorithm
 function koch(cursor, length, degree) {
 	if (degree == 0) {
 		cursor.draw(length);
@@ -39,20 +39,15 @@ function koch(cursor, length, degree) {
 
 // length of segments in 0-degree base curve
 // largest degree to draw snowflake (0-n)
-function generateSnowflake(length, degree, line_width) {
-	var width = length + 2*line_width;
-	var top = Math.sqrt(Math.pow(length/3, 2) - Math.pow(length/3/2, 2));
-	var height = length + top + 2*line_width;
-
+function generateSnowflake(dim, degree) {
 	var origin = {
-		'x': line_width,
-		'y': line_width + top
+		'x': dim.line_width,
+		'y': dim.line_width + dim.offset_top
 	}
 
-	d3.select('svg').remove();
 	var svg = d3.select('body').append('svg')
-							   .attr('width', width)
-							   .attr('height', height);
+							   .attr('width', dim.width)
+							   .attr('height', dim.height);
 
 	var path = d3.svg.line()
 					 .x(function(d) { return d.x; })
@@ -64,29 +59,48 @@ function generateSnowflake(length, degree, line_width) {
 	for (var i = degree; i >= 0; i--) {
 		var cursor = new Cursor(origin);
 
-		koch(cursor, length, i);
+		koch(cursor, dim.segment_length, i);
 		cursor.right(120);
-		koch(cursor, length, i);
+		koch(cursor, dim.segment_length, i);
 		cursor.right(120);
-		koch(cursor, length, i);
+		koch(cursor, dim.segment_length, i);
 
 		svg.append('path')
 		   .attr('d', path(cursor.history))
 		   .attr('stroke', colors[i])
-		   .attr('stroke-width', line_width)
+		   .attr('stroke-width', dim.line_width)
 		   .attr('fill', 'none');
 	}
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
-	var size = window.innerHeight / 2;
-	generateSnowflake(size, 4, 2);
-});
-
-window.onresize = function() {
-	var size = window.innerHeight / 2;
-	generateSnowflake(size, 4, 2);
+// computes dimensional information about the snowflake (width, height)
+function getDimensions(segment_length, line_width) {
+	var width = segment_length + 2*line_width;
+	var offset_top = Math.sqrt(Math.pow(segment_length/3, 2) - Math.pow(segment_length/3/2, 2));
+	var height = segment_length + offset_top + 2*line_width;
+	return {width: width, offset_top: offset_top, height: height, segment_length: segment_length, line_width: line_width};
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+	var size = window.innerHeight / 2;
+	var degree = 4;
+	var line_width = 2;
+
+	var dim = getDimensions(size, line_width);
+
+	generateSnowflake(dim, degree);
+
+	/** Not quite there yet for this (only looks good via Desktop).
+	 *
+	size = window.innerHeight;
+	dim = getDimensions(size, line_width);
+	generateSnowflake(dim, degree);
+
+	size = window.innerHeight * 2;
+	dim = getDimensions(size, line_width);
+	generateSnowflake(dim, degree);
+	*/
+});
 
 
 
