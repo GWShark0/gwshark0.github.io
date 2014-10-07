@@ -78,5 +78,6 @@ function generateSnowflake(length, degree, line_width) {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-	generateSnowflake(300, 4, 2);
+	var size = window.innerHeight / 2;
+	generateSnowflake(size, 4, 2);
 });
