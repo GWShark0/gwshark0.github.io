@@ -49,6 +49,7 @@ function generateSnowflake(length, degree, line_width) {
 		'y': line_width + top
 	}
 
+	d3.select('svg').remove();
 	var svg = d3.select('body').append('svg')
 							   .attr('width', width)
 							   .attr('height', height);
@@ -81,3 +82,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	var size = window.innerHeight / 2;
 	generateSnowflake(size, 4, 2);
 });
+
+window.onresize = function() {
+	var size = window.innerHeight / 2;
+	generateSnowflake(size, 4, 2);
+}
+
+
+
