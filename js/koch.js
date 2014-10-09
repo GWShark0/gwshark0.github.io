@@ -56,6 +56,8 @@ function generateSnowflake(dim, degree) {
 
 	var colors = randomColor({hue: 'red', luminosity: 'light', count: degree + 1});
 
+	var paths = [];
+
 	for (var i = degree; i >= 0; i--) {
 		var cursor = new Cursor(origin);
 
@@ -65,12 +67,24 @@ function generateSnowflake(dim, degree) {
 		cursor.right(120);
 		koch(cursor, dim.segment_length, i);
 
-		svg.append('path')
-		   .attr('d', path(cursor.history))
-		   .attr('stroke', colors[i])
-		   .attr('stroke-width', dim.line_width)
-		   .attr('fill', 'none');
+		paths.push(svg.append('path')
+					  .attr('d', path(cursor.history))
+					  .attr('stroke', colors[i])
+					  .attr('stroke-width', dim.line_width)
+					  .attr('fill', 'none'));
 	}
+
+	// animate the drawing of each path
+	var speed = 2000;
+	paths.reverse().forEach(function(path, i) {
+		var length = path.node().getTotalLength();
+		path.attr('stroke-dasharray', length + ' ' + length)
+			.attr('stroke-dashoffset', length)
+			.transition()
+			.duration((i+1)*speed)
+			.ease('linear')
+			.attr('stroke-dashoffset', 0);
+	});
 }
 
 // computes dimensional information about the snowflake (width, height)
@@ -81,7 +95,7 @@ function getDimensions(segment_length, line_width) {
 	return {width: width, offset_top: offset_top, height: height, segment_length: segment_length, line_width: line_width};
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
 	var size = window.innerHeight / 2;
 	var degree = 4;
 	var line_width = 2;
