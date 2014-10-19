@@ -6,11 +6,11 @@ function Cursor(origin) {
 
 Cursor.prototype.left = function(angle) {
 	this.angle -= angle;
-}
+};
 
 Cursor.prototype.right = function(angle) {
 	this.angle += angle;
-}
+};
 
 Cursor.prototype.draw = function(length) {
 	var angle = this.angle * (Math.PI / 180);
@@ -18,4 +18,4 @@ Cursor.prototype.draw = function(length) {
 	var y = this.position.y + (length * Math.sin(angle));
 	this.position = {'x': x, 'y': y};
 	this.history.push(this.position);
-}
+};
