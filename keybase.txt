@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/dreg
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://dreg.me
+  * I am dreg (https://keybase.io/dreg) on keybase.
+  * I have a public key with fingerprint D821 4416 DDA5 A8CA FCB4  41C9 DE1E 1C56 0329 1472
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101d12f1619198a439dac9c7bc04157d37b151b358c1f3c9e89f7383a7a21d417050a",
+            "fingerprint": "d8214416dda5a8cafcb441c9de1e1c5603291472",
+            "host": "keybase.io",
+            "key_id": "de1e1c5603291472",
+            "kid": "0101d12f1619198a439dac9c7bc04157d37b151b358c1f3c9e89f7383a7a21d417050a",
+            "uid": "fb033c4b2e90872be1a5a21fe17b6219",
+            "username": "dreg"
+        },
+        "revoke": {
+            "sig_ids": [
+                "5879a742cce6da233ea89e378c4e287ac75fe7ca1cc5ca507855e6b4cf9264310f"
+            ]
+        },
+        "service": {
+            "hostname": "dreg.me",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1469079279,
+    "expire_in": 157680000,
+    "prev": "07ffa7ce21fe8748f1f336f93f11491d9a52f3e96aa6bf4a7b81bfd3992a9991",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMJjAnicrVJbaBVHGD6JqdYTLUrrq+hoTazxsHPZnZ2DF6wgKCKoYCjxeJyZnYlr
+4tnT3T1p5KgRb+ShoLSiFFsoFFGkrRdEExWNUdMWIb28qQHBKwGvFY0Ro50NCn3w
+0XmZ+X++7/u/+WYujh2RSlfMar/WUd3bfKLi8vn+Uqp+16qHZSACbz3IlkGTGt5U
+s6eiON/keyALLGhBDyINHcggcznBzOOSSSqkRaBNPUwFtKHAtiuhxpIpl2mKXcwp
+R9AjkFq2xUEd0H6hUYXF0C/ERtZzESQEOp7Hbe5KrqUwpWSeggpK27EwYpBQZIhr
+gihhGHOCRyrjB6ZnivywvXfg37Pv0rCcFhbGkgikmOVSJBQ0vhHUClLhIMgSYKTC
+Al+nElehagQb60CoWoImlWQa+Y3GcASyDcB2KeOUICmV43GEseIuU5i6kijkUi6p
+rRWVHEppS25b1LVt5QgiNUMOwdDSIGe0zbQWXw6LJwn9b3LGnOpAMQziQAbNprkm
+jovZxE+8vpiAvlIi/4aeF37BMy9jCC0qjPygALLQIGXsJ3qQOMyiDFFWB1Rr0Q9V
+3k8QNnVcy6xkjGpJ4qZacypVEolLiatNptjRDGsICYMe4zbSWDGHc0dowqlwodAe
+ZgxxxhgEyYW+LAQg6xibvNFImsgKPC6FCmzs7lpZlapIp0Z+UJn82FR69Li3//jO
+tlGvPn3x81356ydTqw+vDEs9+cop1//e8PLqrh5RO7S4YfeOV2tbu1r7e/M3juVO
+/vniUttgX3XPtyvKX7TNaL/1Gdr3ZOuRY6tPnoujkeVJf3296Rdi/TDmcVVuTLRn
+2b+Z3D/Ptx+5sap74KPXg4eL6W9qF+zU+zpz9W19S+Z9eGXo0bKGUv+zrgOdp4YW
+zTi99OjepfH07HF6Nndr54TL5ZrNgPyevXfo4P3vSjP37n90fPyhmo4fD07Gm1Jz
+JtxpP93507Pb6Zuzz9WmGzoH5savHyzf3je4v+bC1FkgbJu3MNex4urnFzOjzjwt
+pasGup+urVwwLbP82vxM78dbFk3/o/S9PdFvGvpt8fz/AI50Xcc=
+=MVU0
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dreg
+
+==================================================================
